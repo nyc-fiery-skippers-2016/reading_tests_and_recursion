@@ -67,11 +67,6 @@ describe "delete_last" do
     str = "hello"
     expect(delete_last(str, 2)).to eq "hel"
   end
-
-  it "mutates self in place" do
-    str = "blah"
-    expect(delete_last(str, 1)).to equal str.replace "bla"
-  end
 end
 
 
