@@ -18,17 +18,11 @@ def palindrome?(string)
   string == string.reverse ? true : false
 end
 
-# def vowels(string)
-#   vowels = %w(a e i o u)
-#   new_string = string.split(" ").each do |word|
-#     p word
-#     word.each do |letter|
-#       p letter
-#       # return word if vowels.include?(letter)
-#     end
-#   end
-#   new_string
-# end
+def vowels(string)
+  string.split(" ").select do |word|
+    word.include?("a") || word.include?("e") || word.include?("i") || word.include?("o") || word.include?("u")
+  end
+end
 
 def start_with_c?(string)
   string.split(" ").all? { |word| word.start_with?("c") }
@@ -60,9 +54,20 @@ def super_compact(array)
 end
 
 def to_money(num)
+  "$#{'%.2f'%num.round(2)}"
 end
 
-def mode
+def mode(array)
+  new_hash = {}
+  array.each do |elm|
+    if new_hash.has_key?(elm)
+      new_hash[elm] += 1
+    else
+      new_hash[elm] = 1
+    end
+  end
+  sorted = new_hash.sort_by { |key, value| value}.reverse
+  sorted.first[0]
 end
 
 def symbolize(array)
