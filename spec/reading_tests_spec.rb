@@ -70,7 +70,7 @@ describe "delete_last" do
 
   it "mutates self in place" do
     str = "blah"
-    expect(delete_last(str, 1)).to equal str.replace "bla"
+    expect(delete_last("blah", 1)).to eq("bla")
   end
 end
 
