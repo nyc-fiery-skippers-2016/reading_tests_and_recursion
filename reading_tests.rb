@@ -1,36 +1,33 @@
 def word_count(string)
   array = string.split(" ")
-  if array.empty?
-    return 0
-  else
-    return array.length
-  end
+  array.length
 end
 
 def average_word_length(string)
-  word = string.split(" ")
-  return nil if word.empty?
-  sum_of_letters = word.inject{|sum, word| sum += word.length}
-  sum_of_letters/word.length
+  words = string.split(" ")
+  length_array = []
+  return nil if words.empty?
+  word.each{|word| length_array << word.length}
+  length_array.inject(&:+)/words.length
 end
 
 def palindrome?(string)
   string == string.reverse
 end
 
-def vowels(string)
-  vowels = "aeiou"
-  words = string.split(" ")
-  new_words = []
-  words.each do |word|
-    new_words << word if vowels.include?(word)
-  end
-  new_words
-end
+# def vowels(string)
+#   vowels = "aeiou"
+#   words = string.split(" ")
+#   new_words = []
+#   words.each do |word|
+#     new_words << word if vowels.include?(word)
+#   end
+#   new_words
+# end
 
 def start_with_c?(string)
-  words = string.split(" ")
-  words.all?{|word| word.start_with?("C").downcase}
+  words = string.downcase.split(" ")
+  words.all?{|word| word.start_with?("c")}
 end
 
 def titlecase(string)
@@ -38,7 +35,7 @@ def titlecase(string)
   words.each do |word|
     word.capitalize!
   end
-  words
+  words.join(" ")
 end
 
 def delete_last(string, idx)
@@ -47,7 +44,7 @@ def delete_last(string, idx)
 end
 
 def to_money(float)
-  "$" + float.to_s #and round down
+  "$" + float.round(2).to_s
 end
 
 def numeric?(string)
