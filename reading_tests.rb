@@ -18,7 +18,6 @@ def palindrome?(string)
   false
 end
 
-
 def vowels(string)
   vowels = []
   string.split.each do |word|
