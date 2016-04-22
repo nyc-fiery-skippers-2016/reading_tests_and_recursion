@@ -27,7 +27,7 @@ def titlecase(string)
 end
 
 def delete_last(string, num)
-  string.delete! "string[-num..-1]"
+  string.replace (string[0...-num])
 
 end
 
