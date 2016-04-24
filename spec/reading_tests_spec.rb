@@ -1,4 +1,5 @@
 require_relative '../reading_tests.rb'
+require "pry"
 
 describe "word_count" do
   it "returns number of words in a string" do
