@@ -70,7 +70,8 @@ describe "delete_last" do
 
   it "mutates self in place" do
     str = "blah"
-    expect(delete_last(str, 1)).to equal str.replace "bla"
+    expected = "bla"
+    expect(delete_last(str, 1)).to eq expected
   end
 end
 
@@ -94,8 +95,6 @@ describe "numeric?" do
     expect(numeric?("blah")).to be false
   end
 end
-
-
 
 describe "mean" do
   it "calculates average" do
